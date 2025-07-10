@@ -35,14 +35,14 @@ const CalendarView = () => {
 
   const allDates = Array.isArray(studyData)
     ? studyData.flatMap(topic => {
-        if (!topic || !topic.date || !topic.topic) return [];
-        const studyEntry = { date: topic.date, label: `${topic.topic} (Study)` };
-        const reviewEntries = getReviewDates(topic.date).map((date, i) => ({
-          date,
-          label: `${topic.topic} (Review ${i + 1})`,
-        }));
-        return [studyEntry, ...reviewEntries];
-      })
+      if (!topic || !topic.date || !topic.topic) return [];
+      const studyEntry = { date: topic.date, label: `${topic.topic} (Study)` };
+      const reviewEntries = getReviewDates(topic.date).map((date, i) => ({
+        date,
+        label: `${topic.topic} (Review ${i + 1})`,
+      }));
+      return [studyEntry, ...reviewEntries];
+    })
     : [];
 
   const tileContent = ({ date }) => {
@@ -52,7 +52,7 @@ const CalendarView = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-10 p-6 bg-white border border-gray-200 rounded-lg shadow-2xl">
+    <div className="max-w-xl mx-auto mt-4 mb-8 p-6 bg-white border border-gray-200 rounded-lg shadow-2xl">
       <h2 className="text-2xl font-semibold text-center text-blue-700 mb-4">
         🗓️ Study Calendar
       </h2>
