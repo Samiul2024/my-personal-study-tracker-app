@@ -2,6 +2,7 @@ import React from 'react';
 import AddTopic from './components/AddTopic';
 import ReviewSchedule from './components/ReviewSchedule';
 import CalendarView from './components/CalenderView';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <AddTopic />
       <ReviewSchedule />
       <CalendarView />
+      <Footer />
     </div>
   );
 }
